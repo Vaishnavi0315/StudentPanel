@@ -1,0 +1,251 @@
+       
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed; /* Makes the sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust the width as needed */
+    background-color: #644537;
+    color: white;
+    padding-top: 20px;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+}
+
+.sidebar-logo {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: #ede6e2;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #ede6e2; /* Add this line to create a subtle border */
+}
+.nav-tabs {
+    text-align: center;
+   
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+}
+
+.sidebar li {
+    padding: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+.collapse-btn, .logout {
+    width: 80%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+ .logout {
+            background-color: #a08b82;
+            color: white;
+        }
+
+.logout i {
+    margin-right: 10px;
+}
+header {
+    position: fixed; /* Set position to fixed */
+    top: 0; /* Set top to 0 to align with the top of the page */
+    left: 250px; /* Set left to 250px to align with the end of the sidebar */
+    width: calc(100% - 250px); /* Set width to fill the remaining space */
+    background-color: #ffffff; /* White background color */
+    color: grey;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 20px;
+    justify-content: space-between;
+    height: 64px; /* Fixed header height */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ccc; /* Optional: add a bottom border for separation */
+    z-index: 1000; /* Add this line to bring the header to the front */
+}
+
+
+.brand-name {
+    font-size: 1.5em;
+    flex-grow: 1;
+    text-align: left;
+     color: #1a1414;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    color: grey;
+     color: #1a1414;
+}
+
+.user-profile span {
+    margin-right: 10px;
+     color: #1a1414;
+}
+.boxx {
+    display: none;
+}
+
+.boxx.active {
+    display: block;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+    background-color: #E9DCC9;
+    padding: 10px;
+}
+.main-content {
+  margin-left: 250px; /* Same as the sidebar width plus some space */
+    padding: 80px;
+    flex-grow: 1; /* Allows the content to grow and take up remaining space */
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #ffffff;
+    color: grey;
+    padding: 1em 20px;
+    text-align: right;
+}
+.search {
+    padding: 10px;
+    margin-left: 500px;
+    width:250px;
+    background-color: #f4f4f4;
+    
+    text-align: end;
+    
+}
+
+.search input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+}
+
+
+.tabs {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+}
+
+.tabs a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #3498db;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+
+.tabs a.active, .tabs a:hover, .tabs a:focus {
+    border-bottom: 2px solid #3498db;
+}
+
+.tab-content {
+    padding:10px;
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #bdc3c7;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.edit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit:hover {
+    background-color: #2980b9;
+}
+
+
+
+#reschedule-popup {
+    display: none;
+}
+
+#reschedule-popup.show {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

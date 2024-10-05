@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed; /* Makes the sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust the width as needed */
+    background-color: #644537;
+    color: white;
+    padding-top: 20px;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+}
+
+.sidebar-logo {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: #ede6e2;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #ede6e2; /* Add this line to create a subtle border */
+}
+
+.nav-tabs {
+    text-align: center;
+    background-color: #5b5a5a; 
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+}
+
+.sidebar li {
+    padding: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.collapse-btn, .logout {
+    width: 80%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+ .logout {
+            background-color: #a08b82;
+            color: white;
+        }
+
+.logout i {
+    margin-right: 10px;
+}
+
+header {
+    position: fixed; /* Set position to fixed */
+    top: 0; /* Set top to 0 to align with the top of the page */
+    left: 250px; /* Set left to 250px to align with the end of the sidebar */
+    width: calc(100% - 250px); /* Set width to fill the remaining space */
+    background-color: #ffffff; /* White background color */
+    color: grey;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 20px;
+    justify-content: space-between;
+    height: 64px; /* Fixed header height */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ccc; /* Optional: add a bottom border for separation */
+    z-index: 1000; /* Add this line to bring the header to the front */
+}
+
+
+
+.brand-name {
+    font-size: 1.5em;
+    flex-grow: 1;
+    text-align: left;
+     color: #1a1414;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+     color: #1a1414;
+}
+
+.user-profile span {
+    margin-right: 10px;
+     color: #1a1414;
+}
+
+.boxx {
+    display: none;
+}
+
+.boxx.active {
+    display: block;
+}
+
+.content {
+  margin-left: 250px;   /*Same as the sidebar width plus some space */
+    padding: 80px;
+    flex-grow: 1; /* Allows the content to grow and take up remaining space */
+    background-color: #f4f4f4;
+    
+}
+.lan-box{
+     background-color: #ffffff;
+     width: 60%;
+    height: 300px; /* Adjust the height as per your design */
+    margin: 50px auto;
+    padding: 40px 40px 10px 40px; /* Add extra padding at the bottom */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+   margin-bottom: 20px;
+    background-color: #E9DCC9;
+    padding: 10px;
+}
+
+h1{
+    padding: 10px;
+    color: rgb(223, 35, 35);
+    text-align: center
+
+}
+h3{
+    text-align: center 
+}
+h4{
+    padding: 0px;
+    color: rgb(223, 35, 35);
+    text-align: center 
+}
+.language-selection {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.language-selection label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #795548;
+   
+}
+
+.language-selection select {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+/*
+.language-selection {
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.language-selection label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #795548;
+}
+
+.language-selection select {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}*/

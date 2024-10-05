@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="videocalling.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="uploads/ollato.png" alt="Logo" class="sidebar-logo">
+            
+             
+        <ul>
+                <li class="nav-tabs">Dashboard</li>
+                <li><a href="packages.html"><i class="fa-solid fa-gift"></i>   Packages</a></li>
+                <li><a href="lan.php"><i class="fas fa-tasks"></i>   Assessment</a></li>
+                <li><i class="fa-solid fa-cloud-arrow-down"></i> Download Summary</li>
+                <li>Report</li>
+                <li><a href="fetchExplm.php"><i class="fa fa-calendar-check-o"></i> Book Session</a></li>
+                <li><a href="sessionMag.php"><i class="fa-solid fa-building"></i> Session Management</a></li>
+                <li><a href="videocalling.html"><i class="fa fa-bell"></i> Notifications</a></li>
+                <li><a href="feedbackform.php"><i class="fa-solid fa-comments"></i> FeedBack</a></li>
+                <li><a href="updatePro.php"><i class="fa-solid fa-user"></i> Edit Profile</a></li>
+                 <button class="collapse-btn"><i class="fas fa-angle-left"></i></button>
+                <button class="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+           </ul>
+        </div>
+        </div>
+   
+
+    <!--<div id="video-call-container">
+        <video id="localVideo" autoplay muted></video>
+        <video id="remoteVideo" autoplay></video>
+        <button id="startCall">Start Call</button>
+        <button id="endCall">End Call</button>
+    </div> 
+-->
+     
+        <div class="main-content">
+           <header>
+                <div class="brand-name">Ollato's Mind Mapping Programme</div>
+                <div class="user-profile">
+                   <!--  <span><?php echo $full_name; ?></span>-->
+                    <i class="fas fa-user profile-icon"></i>
+                </div>
+            </header>
+            <div class="content">
+            <table class="styled-table">
+                <h3>Videocalling(student end)</h3>
+                <thead>
+                    <tr>
+                        <th>SR No</th>
+                        <th>STUDENTS DETAILS</th>
+                        <th>COUNSELLORS DETAILS</th>
+                        <th>DATE & TIME</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>Jane Smith</td>
+                        <td>2023-06-18 10:00 AM</td>
+                        <td><a href="https://demo.videosdk.live/conference-meeting/8x0n-i7ln-2ez7"><button class="joinC">Join Call</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="https://demo.videosdk.live/conference-meeting/8x0n-i7ln-2ez7"><button class="joinC">Join Call</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="https://demo.videosdk.live/conference-meeting/8x0n-i7ln-2ez7"><button class="joinC">Join Call</button></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  </div>
+
+    <div id="completed" class="tab-content">Completed Content</div>
+    
+    <script src="videocalling.js"></script>
+
+</body>
+</html>

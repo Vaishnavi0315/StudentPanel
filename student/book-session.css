@@ -1,0 +1,165 @@
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+    font-weight: bold;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    text-decoration: none;
+}
+
+
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav>li>a {
+    /* position: relative; */
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    background: #644537;
+    color: white;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.form-select{
+
+display: block;
+width: 100%;
+padding: .375rem 2.25rem .375rem .75rem;
+-moz-padding-start: calc(0.75rem - 3px);
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+background-color: #fff;
+background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+background-repeat: no-repeat;
+background-position: right .75rem center;
+background-size: 16px 12px;
+border: 1px solid #ced4da;
+border-radius: .25rem;
+transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+
+}
+/* card book sestion */
+/* import inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* root */
+:root {
+  --bg-light: #F5F5FC;
+  --bg-dark: #35353C;
+  --bg-darker: #15151C;
+  --font-body: #55555C;
+  --shadow: #C5C5CC;
+}
+
+/* demo related */
+/* body{
+  background: #FFF;
+  height:100%;
+  padding:10%;
+  font-family: "Inter", sans-serif;
+  color: var(--font-body);
+} */
+
+.demo_title h1,h6{
+  color: var(--bg-darker);
+}
+
+#copyrights{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+
+#copyrights a{
+  text-decoration: none;
+  color: var(--bg-darker);
+}
+
+/* tpn card style */
+.tpn_card{
+  background: var(--bg-light);
+  padding: 23px;
+  border-radius:27px;
+  text-align: center;
+  border: 1px solid;
+}
+
+.tpn_card img{
+  border-radius:23px;
+  box-shadow: 1px 7px 13px var(--shadow);
+  width: 50%;
+  object-fit: contain;
+  padding: 3px;
+}
+
+.tpn_card h6{
+  color: var(--bg-primary);
+}
+
+.tpn_card p{
+  color: var(--font-body);
+  font-weight:400;
+  margin-bottom:24px;
+}
+
+.tpn_card .tpn_btn{
+  padding:13px 27px !important;
+  line-height: normal;
+  background: #5f504f;
+  border-radius:17px;
+  text-decoration:none;
+  color: #ede6e2;
+  box-shadow: 1px 7px 13px var(--shadow);
+  transition: all .7s ease;
+}
+
+.tpn_card .tpn_btn:hover{
+  /* background: var(--bg-darker); */
+  box-shadow: none;
+   background:#ede6e2;
+   color:var(--bg-primary);
+  
+}
+
+.modal_card {
+  /* background: var(--bg-light); */
+  /* padding: 23px; */
+  border-radius: 27px;
+  text-align: center;
+}
+
+.modal_card img {
+  border-radius: 23px;
+  box-shadow: 1px 7px 13px var(--shadow);
+  width: 100%;
+  object-fit: contain;
+  padding: 3px;
+}

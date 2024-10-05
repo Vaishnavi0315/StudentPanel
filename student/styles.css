@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+select {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#productList {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}

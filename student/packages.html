@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assessment Test</title>
+    <script src="lan.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <style>
+             
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed; /* Makes the sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust the width as needed */
+    background-color: #644537;
+    color: white;
+    padding-top: 20px;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+}
+
+.sidebar-logo {
+   height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.nav-tabs {
+    text-align: center;
+    background-color: #5b5a5a; 
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+}
+
+.sidebar li {
+    padding: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+.collapse-btn, .logout {
+    width: 80%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+ .logout {
+            background-color: #a08b82;
+            color: white;
+        }
+
+.logout i {
+    margin-right: 10px;
+}
+header {
+    position: fixed; /* Set position to fixed */
+    top: 0; /* Set top to 0 to align with the top of the page */
+    left: 250px; /* Set left to 250px to align with the end of the sidebar */
+    width: calc(100% - 250px); /* Set width to fill the remaining space */
+    background-color: #ffffff; /* White background color */
+    color: grey;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 20px;
+    justify-content: space-between;
+    height: 64px; /* Fixed header height */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ccc; /* Optional: add a bottom border for separation */
+    z-index: 1000; /* Add this line to bring the header to the front */
+}
+
+
+header .brand-name {
+    font-size: 1.5em;
+    font-weight: bold;
+     color: #1a1414;
+}
+
+header .user-profile {
+    display: flex;
+    align-items: center;
+     color: #1a1414;
+}
+
+header .user-profile span {
+    margin-right: 10px;
+     color: #1a1414;
+}
+
+header .profile-icon {
+    font-size: 1.5em;
+     color: #1a1414;
+}
+header {
+    position: fixed; /* Set position to fixed */
+    top: 0; /* Set top to 0 to align with the top of the page */
+    left: 250px; /* Set left to 250px to align with the end of the sidebar */
+    width: calc(100% - 250px); /* Set width to fill the remaining space */
+    background-color: #ffffff; /* White background color */
+    color: grey;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 20px;
+    justify-content: space-between;
+    height: 64px; /* Fixed header height */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ccc; /* Optional: add a bottom border for separation */
+    z-index: 1000; /* Add this line to bring the header to the front */
+}
+
+.brand-name {
+    font-size: 1.5em;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+.user-profile span {
+    margin-right: 10px;
+}
+.main-content {
+    margin-left: 250px; /* Same as the sidebar width plus some space */
+    padding: 80px;
+    flex-grow: 1; /* Allows the content to grow and take up remaining space */
+    background-color: #f4f4f4;
+}
+.search {
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: end;
+    
+}
+
+.search input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+h2 {
+    margin-bottom: 20px;
+    background-color:#E9DCC9;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tabs a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #3498db;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+
+.tabs a.active, .tabs a:hover, .tabs a:focus {
+    border-bottom: 2px solid #3498db;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+.plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plan {
+    padding: 20px;
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan h3 {
+    margin-top: 0;
+    color: #cd8b62;
+    font-size: 1.5em; /* Increased font size */
+    text-align: center; /* Center aligned */
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.plan li {
+    padding: 5px 0;
+    color: #cd8b62;
+}
+
+.plan .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #A7433E;
+}
+
+.plan .discount {
+    font-size: 1.5em;
+    color: #0a0909;
+}
+
+.plan .discount-price {
+    font-size: x-large;
+    color: #A7433E;
+}
+
+.plan button {
+    background-color: #0e0d0d;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.plan button:hover {
+    background-color: #cd8b62;
+}
+
+.coupon {
+    position: relative;
+    perspective: 1000px;
+    width: 120%;
+    height: 400px; /* Increased height */
+}
+
+.coupon-front,
+.coupon-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    border-radius: 10px;
+     justify-content: center;
+}
+
+.coupon-front {
+    background-color: #644537;
+    padding: 20px;
+    text-align: center;
+}
+
+.coupon-back {
+    background-color: #644537;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coupon:hover .coupon-front {
+    transform: rotateY(180deg);
+}
+
+.coupon:hover .coupon-back {
+    transform: rotateY(360deg);
+}
+
+.coupon-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+input.couponCode {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fancy-button {
+    background: linear-gradient(135deg, #A7433E, #C29492);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fancy-button:hover {
+    background: linear-gradient(135deg, #C29492, #A7433E);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+/* Styles for the main list */
+ul, ol {
+    padding-left: 20px; /* Adjust as needed */
+    margin: 0;
+}
+
+/* Styles for nested lists */
+ul ul, ol ol {
+    padding-left: 20px; /* Adjust as needed */
+    list-style-type: disc; /* Use 'circle', 'square', etc. for different bullet styles */
+}
+
+/* Optional: add some custom styling to nested lists */
+ul ul li, ol ol li {
+    color: #cd8b62; /* Adjust color as needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid lightblue;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #323232;
+  --bg-color-sub: #dedede;
+  --bg-color: #eee;
+  --main-color: #323232;
+  position: relative;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.5s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 40px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 100px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+
+
+
+.button2 {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #D1D1D1;
+  background-color: red;
+  width: 100px;
+  height: 30px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.5s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color:white;
+}
+
+.button2:hover {
+  transform: scale(1.1);
+  background-color: #E8E8E8;
+  border-color: darkred;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button2:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%,
+              transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%,
+              transparent 75%, transparent);
+  opacity: 0;
+  animation: buttonGlow 2s linear infinite;
+  z-index: -1;
+}
+
+@keyframes button2Glow {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 400% 0;
+  }
+}
+
+</style>
+
+     <script>
+        // JavaScript to handle the logout action
+        function logout() {
+            window.location.href = 'logout.php';
+        }
+
+        // Add event listener to logout button
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.logout').addEventListener('click', logout);
+        });
+    </script>
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="ollato-logo.jpg" alt="Logo" class="sidebar-logo">
+          <ul>
+                <li class="nav-tabs"><a href="studentDashboard.php">Dashboard</a></li>
+                <li><a href="packages.html"><i class="fa-solid fa-gift"></i>   Packages</a></li>
+                <li><a href="lan.php"><i class="fas fa-tasks"></i>   Assessment</a></li>
+                <li><i class="fa-solid fa-cloud-arrow-down"></i> Download Summary</li>
+                <li>Report</li>
+                <li><a href="fetchExplm.php"><i class="fa fa-calendar-check-o"></i> Book Session</a></li>
+                <li><a href="sessionMag.php"><i class="fa-solid fa-building"></i> Session Management</a></li>
+                <li><a href="videocalling.html"><i class="fa fa-bell"></i> Notifications</a></li>
+                <li><a href="feedbackform.php"><i class="fa-solid fa-comments"></i> FeedBack</a></li>
+                <li><a href="updatePro.php"><i class="fa-solid fa-user"></i> Edit Profile</a></li>
+                <button class="collapse-btn"><i class="fas fa-angle-left"></i></button>
+                <button class="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </ul>
+    </div>
+    </div>
+    
+    <div class="main-content">
+        <header>
+                <div class="brand-name">Ollato's Mind Mapping Programme</div>
+                <div class="user-profile">
+                    <!--<span><?php echo $full_name; ?></span>-->
+                    <i class="fas fa-user profile-icon"></i>
+                </div>
+            </header>
+            <h2>Packages</h2>
+             <div class="plans" id="plans">
+        <!-- Packages will be displayed here -->
+    </div>
+     <script>
+          async function fetchPackages() {
+            const response = await fetch('/ollato/admin/fetch_packages.php');
+            const packages = await response.json();
+
+            const plansContainer = document.getElementById('plans');
+            plansContainer.innerHTML = '';
+
+            packages.forEach(pkg => {
+                const planElement = document.createElement('div');
+                planElement.classList.add('plan');
+
+                planElement.innerHTML = `
+                    <div class="coupon">
+                        <div class="coupon-front">
+                            <h3>${pkg.package_name}</h3>
+                            <ul>
+                                <div class="coupon-container">
+                                <li>Product Price: ₹${pkg.product_price}</li>
+                                <li>Product Details: ${pkg.package_details}
+                                <ul id="package_details"></ul></li>
+                                <li class="discount">Discount: ${pkg.discount}% off</li>
+                                <li class="discount-price">Discount Price: ₹${pkg.discount_price}</li>
+                                <button class="fancy-button buy-button" data-package-id="${pkg.id}" data-discounted-price="${pkg.discount_price}">For more discount !!</button>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="coupon-back">
+                            <h3>${pkg.package_name}</h3>
+                            <ul>
+                                <form id="couponForm" action="apply_coupon.php" method="POST">
+                                <div class="coupon-container">
+                                <input type="text" name="couponCode" class="couponCode" placeholder="Enter coupon code">
+                                <button type="submit" class="fancy-button apply-button" data-original-price="${pkg.product_price}" data-discounted-price="${pkg.discount_price}">Apply</button>
+                                <li>Total Pay: <span class="total-pay">₹${pkg.discount_price}</span></li>
+                                <li>(Exclusive Tax)</li>
+                                </div>
+                            </form>
+                            </ul>
+                            <a href="checkout.php?product_id='.$row['pid'].'" class="fancy-button buy-button" data-package-id="${pkg.id}" data-discounted-price="${pkg.discount_price}">Buy Now</a>
+                        </div>
+                    </div>
+                `;
+
+                plansContainer.appendChild(planElement);
+            });
+
+            document.querySelectorAll('.apply-button').forEach(button => {
+                button.addEventListener('click', handleApplyCoupon);
+            });
+
+            document.querySelectorAll('.buy-button').forEach(button => {
+                button.addEventListener('click', handleBuyNow);
+                
+ 
+            });
+        }
+
+        async function handleApplyCoupon(event) {
+    const button = event.target;
+    const couponInput = button.previousElementSibling;
+    const code = couponInput.value.trim();
+    const originalPrice = parseFloat(button.dataset.originalPrice);
+    const discountedPrice = parseFloat(button.dataset.discountedPrice);
+
+    if (code === '') {
+        alert('Please enter a coupon code.');
+        return;
+    }
+
+    try {
+        const response = await fetch('apply_coupon.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: code
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to apply coupon.');
+        }
+
+        const couponDetails = await response.json();
+        const newDiscountedPrice = calculateDiscountedPrice(originalPrice, couponDetails.discount);
+
+        // Update the UI
+        const couponContainer = button.parentElement;
+        const totalPayElement = couponContainer.querySelector('.total-pay');
+        totalPayElement.textContent = `₹${newDiscountedPrice}`;
+
+        alert(`Coupon applied successfully! New total: ₹${newDiscountedPrice}`);
+    } catch (error) {
+        console.error('Error applying coupon:', error);
+        alert('Failed to apply coupon. Please try again later.');
+    }
+}
+
+function calculateDiscountedPrice(originalPrice, discount) {
+    const discountedPrice = originalPrice * ((100 - discount) / 100);
+    return discountedPrice.toFixed(2); // Adjust as needed
+}
+
+document.querySelectorAll('.apply-button').forEach(button => {
+    button.addEventListener('click', handleApplyCoupon);
+});
+
+       async function handleBuyNow(event) {
+    const button = event.target;
+    const packageId = button.getAttribute('data-package-id');
+    const discountedPrice = button.getAttribute('data-discounted-price');
+
+    try {
+        const response = await fetch('checkout.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `packageId=${packageId}&amount=${discountedPrice}`
+        });
+
+        const result = await response.json();
+
+        // Update the redirect to checkout.php
+        window.location.href = "checkout.php?packageId=" + packageId + "&amount=" + discountedPrice;
+    } catch (error) {
+            console.error(' initiating payment:', error);
+            alert(' initiating payment. Please wait.');
+        }
+}
+        document.addEventListener('DOMContentLoaded', fetchPackages);
+
+
+    </script>
+        
+</body>
+</html>
